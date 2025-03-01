@@ -75,7 +75,7 @@ FROM layoffs_staging_2
 GROUP BY company, 2
 ORDER BY 3 ASC;
 
-
+-- multiple CTE
 WITH Company_Year (company, years, total_laid_off) AS -- take company, year, and sum of laid off
 (
 SELECT company, YEAR(`date`), SUM(total_laid_off)
@@ -91,4 +91,34 @@ WHERE years IS NOT NULL
 SELECT *
 FROM Company_Year_Rank
 WHERE Ranking <= 5
+;
+
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+-- Project Expansion: top 5 companies in each industry based on number of layoffs
+
+SELECT * FROM layoffs_staging_2;
+-- base idea to grab funding
+SELECT company, SUM(funds_raised_millions) AS sum_raised
+FROM layoffs_staging_2
+WHERE (industry IS NOT NULL)
+GROUP BY company;
+
+
+WITH industry_funding_cte AS
+(
+SELECT company, industry, SUM(funds_raised_millions) AS sum_raised, total_laid_off
+FROM layoffs_staging_2
+WHERE (industry IS NOT NULL AND total_laid_off IS NOT NULL)
+GROUP BY industry, company, total_laid_off
+), industry_ranked_cte AS
+(
+SELECT industry, company, sum_raised, total_laid_off,
+DENSE_RANK() OVER(PARTITION BY industry ORDER BY total_laid_off DESC) AS rank_industry_layoffs
+FROM industry_funding_cte
+)
+SELECT * 
+FROM industry_ranked_cte
+WHERE rank_industry_layoffs <= 5
 ;
