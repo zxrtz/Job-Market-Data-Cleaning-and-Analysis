@@ -105,20 +105,20 @@ FROM layoffs_staging_2
 WHERE (industry IS NOT NULL)
 GROUP BY company;
 
-
-WITH industry_funding_cte AS
-(
-SELECT company, industry, SUM(funds_raised_millions) AS sum_raised, total_laid_off
+-- top 5 companies in each industry based on number of layoffs, individually by year
+WITH industry_grouped_funding_cte AS (
+SELECT company, SUM(funds_raised_millions) AS sum_raised
 FROM layoffs_staging_2
-WHERE (industry IS NOT NULL AND total_laid_off IS NOT NULL)
-GROUP BY industry, company, total_laid_off
-), industry_ranked_cte AS
+GROUP BY company
+), company_rank_industry_cte AS
 (
-SELECT industry, company, sum_raised, total_laid_off,
+SELECT industry, company, total_laid_off, YEAR(`date`) AS `year`,
 DENSE_RANK() OVER(PARTITION BY industry ORDER BY total_laid_off DESC) AS rank_industry_layoffs
-FROM industry_funding_cte
+FROM layoffs_staging_2
+WHERE industry IS NOT NULL AND total_laid_off IS NOT NULL
 )
-SELECT * 
-FROM industry_ranked_cte
-WHERE rank_industry_layoffs <= 5
-;
+SELECT *
+FROM company_rank_industry_cte
+WHERE rank_industry_layoffs < 6;
+
+-- -- alternatively, create a table with grouped layoffs TOTAL (which probably has to include all sums of other totals as well)
