@@ -9,6 +9,7 @@ The Exploratory Data Analysis that I have done includes CTEs, Window Functions, 
 This is compiled in the file named EDA.sql
 
 Below you can see the companies in the top 5 for the number layoffs per year.
+
 ![image](https://github.com/user-attachments/assets/a355e78e-d393-483d-bf40-1ecaed3e12dc)
 
 
