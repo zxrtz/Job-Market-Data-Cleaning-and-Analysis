@@ -13,8 +13,13 @@ Below you can see the companies in the top 5 for the number layoffs per year.
 ![image](https://github.com/user-attachments/assets/a355e78e-d393-483d-bf40-1ecaed3e12dc)
 
 
+
 Next, the screenshot below shows the top 5 companies in each industry based on number of layoffs. You can see that the more funding a company has, the more layoffs they usually have.
 Pretty cool, right?
 
 ![image](https://github.com/user-attachments/assets/2a035c4a-9421-453e-a871-47217f7f6655)
 
+
+This final screenshots shows the complex query for the top 5 company layoffs per industry, which uses several CTEs.
+
+![image](https://github.com/user-attachments/assets/9a88d0c1-1540-4517-a383-93d477d8efe7)
