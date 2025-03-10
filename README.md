@@ -1,5 +1,5 @@
 # Job Market Cleaning and EDA
-Utilizing MySQL, extract, transfer, and load (ETL) job market data to cleanse and standardize data for analysis. Analysis of job market to measure layoff data against company performance.
+Utilizing MySQL, cleanse and standardize job market data for analysis. Analysis of job market to measure layoff data against company performance.
 
 
 First, I transformed cleaned job market layoff data to remove duplicates, remove blank and irrelevant data, and modified fields to prepare for analysis. 
