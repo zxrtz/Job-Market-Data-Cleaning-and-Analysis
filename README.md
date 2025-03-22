@@ -11,7 +11,6 @@ Utilizing MySQL, cleanse and standardize job market data for analysis.
   - removed duplicates
   - removed blank and irrelevant data
   - updated fields (date fields) to be properly queried
-- staged data and prepared other queries to properly view insight
 
 
 Below you can see the companies in the top 5 for the number layoffs per year.
