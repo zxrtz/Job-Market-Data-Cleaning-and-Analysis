@@ -1,7 +1,6 @@
 # Job Market Cleaning and EDA
 Utilizing MySQL, cleanse and standardize job market data for analysis. Analysis of job market to measure layoff data against company performance.
 
-
 First, I transformed cleaned job market layoff data to remove duplicates, remove blank and irrelevant data, and modified fields to prepare for analysis. 
 This is in the file named data_cleaning.sql.
 
@@ -22,7 +21,7 @@ Pretty cool, right?
 
 
 
-This final screenshots shows the complex query for the top 5 company layoffs per industry, which uses several CTEs.
+**This final screenshots shows the complex query for the top 5 company layoffs per industry, which uses several CTEs.**
 
 ![image](https://github.com/user-attachments/assets/f167f656-f338-4576-846e-12b00e3ff469)
 
