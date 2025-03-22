@@ -4,7 +4,11 @@ Utilizing MySQL, cleanse and standardize job market data for analysis. Analysis 
 First, I transformed cleaned job market layoff data to remove duplicates, remove blank and irrelevant data, and modified fields to prepare for analysis. 
 This is in the file named data_cleaning.sql.
 
-The Exploratory Data Analysis that I have done includes CTEs, Window Functions, Aggregate Functions, etc.
+Then, I perfomed an exploratory data analysis using: 
+- CTEs
+- Window Functions
+- Aggregate Functions
+etc.
 This is compiled in the file named EDA.sql
 
 Below you can see the companies in the top 5 for the number layoffs per year.
