@@ -1,17 +1,13 @@
 # Job Market Cleaning and EDA
 Utilizing MySQL, cleanse and standardize job market data for analysis. 
 
-**GOAL**: Analysis of raw job market data to measure layoff data against company performance.
+**GOAL**: Analysis of raw job market data to measure layoff data against company performance. Much of the data was messy and had errors when querying, especially when dealing with dates.
 
 **SOLUTION**: I perfomed an exploratory data analysis using the following SQL concepts: 
 - CTEs
 - Window Functions
 - Aggregate Functions
-etc.
-
 I also **cleaned and standardized the data**. I **remove duplicates**, **removed blank and irrelevant data**, and **modified fields** to prepare for analysis. 
-
-Much of the data was messy and had errors when querying, especially when dealing with dates.
 
 
 Below you can see the companies in the top 5 for the number layoffs per year.
