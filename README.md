@@ -7,7 +7,11 @@ Utilizing MySQL, cleanse and standardize job market data for analysis.
 - CTEs
 - Window Functions
 - Aggregate Functions
-I also **cleaned and standardized the data**. I **remove duplicates**, **removed blank and irrelevant data**, and **modified fields** to prepare for analysis. 
+- **cleaned and standardized the data to prepare for analysis**
+  - removed duplicates
+  - removed blank and irrelevant data
+  - updated fields to be properly queried
+  - updated fields to properly view insight
 
 
 Below you can see the companies in the top 5 for the number layoffs per year.
